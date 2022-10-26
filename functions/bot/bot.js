@@ -1,6 +1,6 @@
 const { Telegraf } = require("telegraf");
-const TOKEN = "5153026043:AAEOA6Jgze21I8PGuZWKJoNMGY1Wzl6S5OI";
-const bot = new Telegraf(TOKEN);
+
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const web_link = "https://celebrated-torte-184681.netlify.app/";
 
@@ -11,8 +11,6 @@ bot.start((ctx) =>
     },
   })
 );
-
-
 exports.handler = async event => {
     try {
       await bot.handleUpdate(JSON.parse(event.body))
