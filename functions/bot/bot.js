@@ -12,6 +12,7 @@ bot.start((ctx) =>
   })
 );
 
+
 exports.handler = async event => {
     try {
       await bot.handleUpdate(JSON.parse(event.body))
@@ -21,3 +22,4 @@ exports.handler = async event => {
       return { statusCode: 400, body: "This endpoint is meant for bot and telegram communication" }
     }
   }
+ 
