@@ -1,7 +1,6 @@
 const { Telegraf } = require("telegraf");
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
-
+const bot = new Telegraf('5450453330:AAE-v-2APq8VWLpCZ47Oq2IKYjpH9rJyIqo');
 const web_link = "https://celebrated-torte-184681.netlify.app/";
 
 bot.start((ctx) =>
@@ -11,13 +10,5 @@ bot.start((ctx) =>
     },
   })
 );
-exports.handler = async event => {
-    try {
-      await bot.handleUpdate(JSON.parse(event.body))
-      return { statusCode: 200, body: "" }
-    } catch (e) {
-      console.error("error in handler:", e)
-      return { statusCode: 400, body: "This endpoint is meant for bot and telegram communication" }
-    }
-  }
+bot.launch();
  
